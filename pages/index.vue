@@ -35,11 +35,13 @@
     </div>
 
     <!-- Showcase section -->
-    <div class="w-full custom-bg flex justify-center align-middle items-center py-24">
+    <div class="w-full custom-bg p-8">
+        <h3 class="text-xl lg:text-2xl bg-white text-black inline-block
+          py-2 px-6 mb-12 lg:ml-32">PUT THESE IN YOUR CART</h3>
       <div class="w-[85vw] lg:w-[70vw] m-auto flex justify-between items-center align-middle">
-        <ProductShowcase image="bottle_banana.png" /> 
-        <ProductShowcase image="bottle_lyche.png" /> 
-        <ProductShowcase image="bottle_watermelon.png" /> 
+        <ProductShowcase image="bottle_banana.png" />
+        <ProductShowcase image="bottle_lyche.png" />
+        <ProductShowcase image="bottle_watermelon.png" />
       </div>
     </div>
   </div>
