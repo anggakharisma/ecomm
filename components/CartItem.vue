@@ -1,8 +1,6 @@
 <template>
-  <div
-    class="flex justify-around align-middle items-center my-8 border-solid border-b-gray-200 pb-4 border-b-2"
-  >
-    <img class="w-24 ml-4" :src="getImage" alt="from" />
+  <div class="flex justify-around align-middle items-center my-8 border-solid border-b-gray-200 pb-4 border-b-2">
+    <img class="w-24 ml-4" :src="`_nuxt/assets/images/${props.image}`" alt="from" />
     <p class="max-w-[24px] mr-8 font-semibold">{{ productName }}</p>
     <p>{{ qty }}</p>
     <p>
@@ -18,8 +16,6 @@
 </template>
 
 <script setup lang="ts">
-import { computed } from 'vue'
-
 const props = defineProps<{
   image: string
   productName: string
@@ -27,7 +23,4 @@ const props = defineProps<{
   price: number
 }>()
 
-const getImage = computed(() => {
-  return require(`~/assets/images/${props.image}`)
-})
 </script>
