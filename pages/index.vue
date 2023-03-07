@@ -1,5 +1,5 @@
 <template>
-	<div>
+	<div class="relative">
 		<HeroSection />
 		<Cart />
 
@@ -36,9 +36,12 @@
 
 		<!-- Showcase section -->
 		<div class="w-full custom-bg p-8">
-			<h3 class="text-xl lg:text-center lg:text-2xl lg:ml-[12vw] bg-red-400 text-white font-semibold inline-block py-2 px-6 mb-12 lg:py-4">PUT THESE IN YOUR CART</h3>
+			<h3
+				class="text-xl lg:text-center lg:text-2xl lg:ml-[12vw] bg-red-400 text-white font-semibold inline-block py-2 px-6 mb-12 lg:py-4">
+				PUT THESE IN YOUR CART</h3>
 			<div class="w-[85vw] lg:w-[70vw] m-auto flex justify-between items-center align-middle">
-				<ProductShowcase :key="item.id" v-for="item in items" :id="item.id" :image="item.image" :product-name="item.name" :price="item.price" />
+				<ProductShowcase :key="item.id" v-for="item in items" :id="item.id" :image="item.image" :product-name="item.name"
+					:price="item.price" />
 			</div>
 		</div>
 		<div class="w-full bg-gradient-to-r from-red-300 to-red-500 flex flex-col items-center align-middle">
@@ -48,10 +51,14 @@
 			</div>
 		</div>
 	</div>
+	<Transition name="slide-fade">
+		<Notification v-if="notificationStore.showNotification" :text="notificationStore.text" />
+	</Transition>
 </template>
 
 <script setup lang="ts">
-import { cartStore } from '../store/cart';
+import { notificationStore } from '../store/notification';
+
 const { data: items } = await useFetch('/api/data')
 
 useHead({
@@ -66,8 +73,23 @@ useHead({
 	animation-iteration-count: infinite;
 }
 
-@keyframes shake {
+.slide-fade-enter-active {
+  transition: all 0.3s ease-out;
+}
 
+.slide-fade-leave-active {
+  transition: all 0.3s cubic-bezier(1, 0.5, 0.8, 1);
+}
+
+.slide-fade-enter-from {
+	transform: translate(-80px, -100px);
+}
+
+.slide-fade-leave-to {
+	transform: translate(-80px, -300px);
+}
+
+@keyframes shake {
 	10%,
 	90% {
 		transform: translate3d(-8px, 0, 0);
