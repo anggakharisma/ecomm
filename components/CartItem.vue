@@ -1,6 +1,6 @@
 <template>
 	<div class="flex justify-around align-middle items-center my-8 border-solid border-b-gray-200 pb-4 border-b-2">
-		<img class="w-24 ml-4" :src="`_nuxt/assets/images/${item.image}`" alt="from" />
+		<img class="w-24 ml-4" :src="useAssets(`${item.image}`)" alt="from" />
 		<p class="max-w-[24px] mr-8 font-semibold">{{ item.productName }}</p>
 		<p>{{ item.qty }}</p>
 		<p v-if="item.qty">
@@ -18,7 +18,7 @@
 <script setup lang="ts">
 import { notificationStore } from '~/store/notification';
 import { cartStore } from '../store/cart'
-
+import useAssets from '../composable/useAssets'
 
 const props = defineProps<{ item: CartItem }>();
 
