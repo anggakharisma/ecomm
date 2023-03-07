@@ -17,7 +17,7 @@
           v-for="item in cartStore.cart"
           :key="item.id"
           :image="item.image"
-          :product-name="item.name"
+          :product-name="item.productName"
           :qty="item.qty"
           :price="item.price"
         />

@@ -4,11 +4,11 @@ export const cartStore = ref({
   showCartModal: false,
   cart: [] as Array<CartItem>,
   addItem(item: CartItem) {
-    if (!this.cart.find((cartItem) => item.name === cartItem.name)) {
+    if (!this.cart.find((cartItem) => item.productName === cartItem.productName)) {
       this.cart.push(item)
     } else {
       this.cart.forEach((cartItem) =>
-        item.name === cartItem.name
+        item.productName === cartItem.productName
           ? { ...cartItem, qty: ++cartItem.qty }
           : { ...item, qty: 1 }
       )
