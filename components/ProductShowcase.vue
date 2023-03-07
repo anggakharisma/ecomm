@@ -32,7 +32,7 @@ const addItemToCart = () => {
 	notificationStore.value.text = "Item added";
 	setTimeout(() => {
 		notificationStore.value.showNotification = false;
-	}, 3000);
+	}, 1500);
 }
 
 </script>

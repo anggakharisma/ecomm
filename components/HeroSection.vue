@@ -13,7 +13,7 @@
       />
       <div>
         <h3
-          class="text-7xl lg:text-8xl font-bold text-white leading-[6rem] lg:leading-[8rem]"
+          class="text-7xl t tracking-wider lg:text-8xl font-bold text-white leading-[6rem] lg:leading-[8rem]"
         >
           IT'S<br />
           PRETTY<br />
