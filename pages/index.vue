@@ -50,7 +50,9 @@
 				<h4 class="text-xl text-white font-bold">© CCW 2023</h4>
 			</div>
 		</div>
-		<Notification  v-if="notificationStore.isNotificationVisible" />
+		<Transition name="slide-fade">
+			<Notification  v-if="notificationStore.isNotificationVisible" />
+		</Transition>
 	</div>
 </template>
 
@@ -72,11 +74,11 @@ useHead({
 }
 
 .slide-fade-enter-active {
-	transition: all 0.2s ease-out;
+	transition: all 0.15s ease-out;
 }
 
 .slide-fade-leave-active {
-	transition: all 0.2s cubic-bezier(1, 0.5, 0.8, 1);
+	transition: all 0.4s cubic-bezier(1, 0.5, 0.8, 1);
 }
 
 .slide-fade-enter-from {
