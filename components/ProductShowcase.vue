@@ -28,11 +28,9 @@ const addItemToCart = () => {
 		productName: props.productName,
 		qty: 1
 	});
-	notificationStore.value.showNotification = true;
-	notificationStore.value.text = "Item added";
-	setTimeout(() => {
-		notificationStore.value.showNotification = false;
-	}, 1500);
+
+	notificationStore.value.showNotification(`${props.productName} Added`);
+	
 }
 
 </script>

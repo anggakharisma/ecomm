@@ -52,7 +52,7 @@
 		</div>
 	</div>
 	<Transition name="slide-fade">
-		<Notification v-if="notificationStore.showNotification" :text="notificationStore.text" />
+		<Notification v-if="notificationStore.isNotificationVisible" :text="notificationStore.text" />
 	</Transition>
 </template>
 
@@ -82,7 +82,7 @@ useHead({
 }
 
 .slide-fade-enter-from {
-	transform: translate(-80px, -100px);
+	transform: translate(-50%, -100px);
 }
 
 .slide-fade-leave-to {

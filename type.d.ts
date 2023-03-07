@@ -2,6 +2,6 @@ interface CartItem {
   id: number,
   image: string,
   productName: string,
-  qty: number,
+  qty?: number,
   price: number
 }

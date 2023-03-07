@@ -15,11 +15,8 @@
         <h4 v-if="cartStore.cart.length < 1" class="text-center">Empty cart</h4>
         <CartItem
           v-for="item in cartStore.cart"
+					:item="item"
           :key="item.id"
-          :image="item.image"
-          :product-name="item.productName"
-          :qty="item.qty"
-          :price="item.price"
         />
       </div>
     </div>
