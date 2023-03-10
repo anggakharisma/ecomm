@@ -86,7 +86,7 @@ useHead({
 }
 
 .slide-fade-leave-to {
-	transform: translate(-80px, -300px);
+	transform: translate(-50%, -300px);
 }
 
 @keyframes shake {
