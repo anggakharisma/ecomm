@@ -23,11 +23,12 @@ import useAssets from '../composable/useAssets'
 const props = defineProps<{ item: CartItem }>();
 
 const deleteItem = () => {
-	const { item } = props;
-	cartStore.value.deleteItem(item);
+	if (confirm("Do you wanna delete this item ?")) {
+		const { item } = props;
+		cartStore.value.deleteItem(item);
 
-	notificationStore.value.showNotification("Item deleted");
-
+		notificationStore.value.showNotification("Item deleted");
+	}
 }
 
 </script>
